@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Peça um orçamento de site: preencha o formulário e receba uma proposta de Eduardo Neumam Fraizleben.">
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <title>Contato | Eduardo Neumam Fraizleben</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body id="topo">
+
+  <header class="topo">
+    <div class="container">
+      <a class="logo" href="../index.html">Eduardo Fraizleben<span>.dev</span></a>
+      <nav>
+        <ul class="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="curriculo.html">Currículo</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a class="ativo" href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="cabecalho-pagina">
+    <div class="container">
+      <h1>Peça seu orçamento</h1>
+      <p>Conte o que você precisa e eu retorno com uma proposta. Se quiser conferir os valores antes, veja a página de <a href="servicos.html" style="color: var(--ambar);">serviços</a>.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container" style="max-width: 820px;">
+
+      <form action="mailto:eduardonfraiz@gmail.com" method="post" enctype="text/plain">
+
+        <fieldset>
+          <legend>Seus dados</legend>
+
+          <div class="campo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Como devo te chamar?" required>
+          </div>
+
+          <div class="linha-campos">
+            <div class="campo">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(27) 90000-0000" pattern="[0-9()\s\-+]{8,}" required>
+            </div>
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label>Você é</label>
+            <div class="opcoes">
+              <label><input type="radio" name="tipo_pessoa" value="fisica" checked> Pessoa física</label>
+              <label><input type="radio" name="tipo_pessoa" value="juridica"> Pessoa jurídica</label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="horario">Melhor horário para contato</label>
+            <select id="horario" name="horario">
+              <option value="">Selecione</option>
+              <option value="manha">Manhã (8h às 12h)</option>
+              <option value="tarde">Tarde (12h às 18h)</option>
+              <option value="noite">Noite (18h às 21h)</option>
+              <option value="qualquer">Qualquer horário</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>O que você precisa</legend>
+
+          <div class="campo">
+            <label for="servico">Tipo de serviço</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione</option>
+              <optgroup label="Sites estáticos">
+                <option value="estatico-1-2">Site de 1 a 2 páginas</option>
+                <option value="estatico-3-5">Site de 3 a 5 páginas</option>
+                <option value="estatico-5-mais">Site com mais de 5 páginas</option>
+              </optgroup>
+              <optgroup label="Sites com programação">
+                <option value="dinamico">Página dinâmica</option>
+                <option value="avancado">Página super avançada</option>
+              </optgroup>
+              <option value="nao-sei">Ainda não sei</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="segmento">Segmento do seu negócio</label>
+            <input type="text" id="segmento" name="segmento" list="lista-segmentos" placeholder="Ex.: cafeteria, academia...">
+            <datalist id="lista-segmentos">
+              <option value="Restaurante">
+              <option value="Academia">
+              <option value="Livraria">
+              <option value="Cafeteria">
+              <option value="Escolinha de futebol">
+              <option value="Escolinha de vôlei">
+              <option value="Profissional autônomo">
+            </datalist>
+          </div>
+
+          <div class="campo">
+            <label>Recursos que gostaria de ter</label>
+            <div class="opcoes">
+              <label><input type="checkbox" name="recursos" value="formulario"> Formulário de contato</label>
+              <label><input type="checkbox" name="recursos" value="galeria"> Galeria de fotos</label>
+              <label><input type="checkbox" name="recursos" value="video"> Vídeo ou áudio</label>
+              <label><input type="checkbox" name="recursos" value="login"> Login de usuários</label>
+              <label><input type="checkbox" name="recursos" value="redes"> Links para redes sociais</label>
+            </div>
+          </div>
+
+          <div class="linha-campos">
+            <div class="campo">
+              <label for="orcamento">Orçamento previsto: <span class="valor-range" id="valor-orcamento">R$ 1.000</span></label>
+              <input type="range" id="orcamento" name="orcamento" min="300" max="5000" step="100" value="1000" oninput="document.getElementById('valor-orcamento').textContent = 'R$ ' + Number(this.value).toLocaleString('pt-BR')">
+            </div>
+            <div class="campo">
+              <label for="prazo">Prazo desejado</label>
+              <input type="date" id="prazo" name="prazo">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="descricao">Descreva o que deseja contratar</label>
+            <textarea id="descricao" name="descricao" placeholder="Conte um pouco sobre o seu negócio e o que você espera do site." required></textarea>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <div class="opcoes">
+            <label><input type="checkbox" name="proposta" value="sim" checked> Quero receber a proposta por e-mail</label>
+            <label><input type="checkbox" name="aceite" value="sim" required> Autorizo o uso dos meus dados para contato</label>
+          </div>
+        </div>
+
+        <div class="acoes-form">
+          <button type="submit" class="btn escuro">Enviar pedido</button>
+          <button type="reset" class="btn vazado" style="color: var(--azul); border-color: var(--borda);">Limpar</button>
+        </div>
+      </form>
+
+      <p class="nota">Prefere outro canal? Escreva para <a href="mailto:eduardonfraiz@gmail.com">eduardonfraiz@gmail.com</a>, fale comigo pelo <a href="https://www.linkedin.com/in/eduardo-neumam-fraizleben-3496713b6/" target="_blank" rel="noopener">LinkedIn</a> ou veja meu <a href="curriculo.html">currículo</a>.</p>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <h4>Eduardo Neumam Fraizleben</h4>
+        <p>Estudante de Ciência da Computação e desenvolvedor web.</p>
+        <p><a href="mailto:eduardonfraiz@gmail.com">eduardonfraiz@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Páginas</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="curriculo.html">Currículo</a></li>
+          <li><a href="github.html">GitHub</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links externos</h4>
+        <ul>
+          <li><a href="https://github.com/EduardoNFraiz" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/eduardo-neumam-fraizleben-3496713b6/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <p class="copy">© 2026 Eduardo Neumam Fraizleben. Trabalho acadêmico de Construção de Software para Web. <a href="#topo">Voltar ao topo</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
